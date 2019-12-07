@@ -1,0 +1,1055 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="Readme_SQL2000SampleDbScripts_files/filelist.xml">
+<title>Updated SQL Server 2000 Sample Database Scripts</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:LastAuthor>Susan Jorgenson</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>4</o:TotalTime>
+  <o:Created>2004-12-21T00:05:00Z</o:Created>
+  <o:LastSaved>2004-12-21T00:09:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1673</o:Words>
+  <o:Characters>8772</o:Characters>
+  <o:Company>Microsoft Corporation</o:Company>
+  <o:Lines>186</o:Lines>
+  <o:Paragraphs>143</o:Paragraphs>
+  <o:CharactersWithSpaces>10302</o:CharactersWithSpaces>
+  <o:Version>11.6360</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DisplayBackgroundShape/>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+a:active, a:hover 	{ color: "#FF0000";  cursor:hand; text-decoration:"underline";}
+h1
+	{margin-bottom:" .5em";}
+h2
+	{margin-bottom:" .5em";}
+h4
+	{margin-bottom:" .5em";}
+h5
+	{margin-bottom:" .5em";}
+p
+	{margin-top:" .6em";}
+dt
+	{font-decoration: underline;}
+table
+	{cellpadding: "0.5em";}
+indent
+		{ margin-left: "1.5em";}
+#ALERT\_NOTE
+	{margin-left:" 1.5em";
+	margin-top:" 1em";}
+#ALERT\_IMPORTANT
+	{margin-left:" 1.5em";
+	margin-top:" 1em";}
+#ALERT\_WARNING
+	{color: "B22222";
+	margin-left:" 1.5em";
+	margin-top:" 1em";}
+
+ /* Font Definitions */
+ @font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:23.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{margin-top:.25in;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:21.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h3
+	{margin-top:.2in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:19.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h4
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:17.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h5
+	{margin-top:.25in;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h6
+	{margin-top:.2in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#660000;
+	text-decoration:underline;
+	text-underline:single;}
+em
+	{color:red;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	margin-bottom:.1in;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+code
+	{mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+pre
+	{margin-top:0in;
+	margin-bottom:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:70780998;
+	mso-list-template-ids:-1469567146;}
+@list l1
+	{mso-list-id:211312546;
+	mso-list-template-ids:981356148;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:449664986;
+	mso-list-template-ids:-1469567146;}
+@list l3
+	{mso-list-id:467821962;
+	mso-list-template-ids:-1469567146;}
+@list l4
+	{mso-list-id:642199059;
+	mso-list-template-ids:-1469567146;}
+@list l5
+	{mso-list-id:677006425;
+	mso-list-template-ids:1590835080;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:702442638;
+	mso-list-template-ids:-1469567146;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:1389573287;
+	mso-list-template-ids:-1469567146;}
+@list l8
+	{mso-list-id:1533373284;
+	mso-list-template-ids:-1469567146;}
+@list l9
+	{mso-list-id:1721006235;
+	mso-list-template-ids:679795866;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l10
+	{mso-list-id:1873227428;
+	mso-list-template-ids:603867934;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!-- Document last modified on  Wednesday, December 15, 2004 - 9:35 AM --><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US link=blue vlink="#660000" style='tab-interval:
+.5in' topmargin=0 id=bodyID>
+
+<div class=Section1>
+
+<h1><span style='font-size:16.0pt;font-family:Verdana;color:black'>Updated SQL
+Server 2000 Sample Database Files<o:p></o:p></span></h1>
+
+<h5><span style='font-size:10.0pt;font-family:Verdana;color:black'>December 15,
+2004<o:p></o:p></span></h5>
+
+<p><span class=GramE><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>© Copyright Microsoft Corporation, 2004.</span></span><span
+style='font-size:8.5pt;font-family:Verdana;color:black'> All rights reserved.<o:p></o:p></span></p>
+
+<p style='background:#C0FFFF'><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>&nbsp;<br>
+The SQL Server documentation team cannot answer technical support questions,
+but welcomes your suggestions and comments about this <span class=SpellE>readme</span>
+documentation. You can quickly and directly send e-mail feedback using the link
+below. Please send feedback in English.<br>
+<br>
+To submit written feedback about this document, click here:&nbsp;&nbsp;<a
+href="mailto:sqldocfb@microsoft.com?subject=SQL%20Server%202000%20Sample%20Database%20Scripts%20readme%20file&amp;body=---Please%20type%20comments%20here,%20leaving%20the%20subject%20line%20in%20place.---">Submit
+feedback</a>.<br>
+&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal><a name="_introduction_d3jb"></a><b><span style='font-size:
+8.5pt;font-family:Verdana;color:black'>Introduction</span></b><span
+style='font-size:8.5pt;font-family:Verdana;color:black'><o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>The Microsoft®
+SQL&nbsp;Server™ 2000 Sample Database Files include: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l1 level1 lfo1;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>New versions of two scripts included with SQL&nbsp;Server 2000: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.5in;text-indent:-.25in;mso-list:l1 level2 lfo1;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=SpellE><span style='font-size:8.5pt;
+font-family:Verdana;color:black'>Instpubs.sql</span></span><span
+style='font-size:8.5pt;font-family:Verdana;color:black'> creates the <b>pubs</b>
+sample database.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.5in;text-indent:-.25in;mso-list:l1 level2 lfo1;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=SpellE><span style='font-size:8.5pt;
+font-family:Verdana;color:black'>Instnwnd.sql</span></span><span
+style='font-size:8.5pt;font-family:Verdana;color:black'> creates the <span
+class=SpellE><b>Northwind</b></span> sample database.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l1 level1 lfo1;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Pre-built database files that can be attached to an instance of
+SQL&nbsp;Server 2000: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.5in;text-indent:-.25in;mso-list:l1 level2 lfo1;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=SpellE><span style='font-size:8.5pt;
+font-family:Verdana;color:black'>Pubs.mdf</span></span><span style='font-size:
+8.5pt;font-family:Verdana;color:black'> and <span class=SpellE>pubs_log.ldf</span>
+are the data and log files for the <b>pubs</b> sample database.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.5in;text-indent:-.25in;mso-list:l1 level2 lfo1;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=SpellE><span style='font-size:8.5pt;
+font-family:Verdana;color:black'>Northwind.mdf</span></span><span
+style='font-size:8.5pt;font-family:Verdana;color:black'> and <span
+class=SpellE>northwind.ldf</span> are the data and log files for the <span
+class=SpellE><b>Northwind</b></span> sample database.<o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>These copies
+of the scripts or database files are the same as the versions included with
+SQL&nbsp;Server 2000, except for these changes: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l5 level1 lfo2;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>The script for creating <b>pubs</b>, <span class=SpellE>instpubs.sql</span>,
+has been modified to install <b>pubs</b> and all of the <b>pubs</b> data in one
+step. The original version of <span class=SpellE>instpubs.sql</span> included
+in SQL Server 2000 does not load in some of the <b>pubs</b> data, and customers
+were required to run batch jobs to install some of the larger data values.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l5 level1 lfo2;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>The scripts have been brought into compliance with recent
+Microsoft samples security guidelines. <span class=SpellE>Instpubs.sql</span>
+no longer creates a “guest” user and no longer grants rights to “guest” or
+“public”. All dates that are used to populate the databases now express the
+full four-digit year, such as 1992.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l5 level1 lfo2;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>The pre-built database files include all of the changes
+incorporated in the new script files.<o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>SQL&nbsp;Server
+2000 Desktop Engine (MSDE 2000) customers can also use these copies of the
+files to install <b>pubs</b> and <span class=SpellE><b>Northwind</b></span>.<o:p></o:p></span></p>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p class=MsoNormal><b><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Note</span></b><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>&nbsp;&nbsp;&nbsp;If the instance of SQL&nbsp;Server 2000 was
+installed with a case-sensitive collation, always type <b>pubs</b> in all
+lowercase letters, and <span class=SpellE><b>Northwind</b></span> with an
+initial capital &quot;N&quot; followed by lowercase letters. Sample
+applications and the code samples in SQL&nbsp;Server Books Online might not
+work correctly if the database names are not created exactly as shown in the
+examples.<o:p></o:p></span></p>
+
+</blockquote>
+
+<h1><a name="_sample_script_prerequisites_cuy1"></a><span style='font-size:
+16.0pt;font-family:Verdana;color:black'>Sample Files Prerequisites<o:p></o:p></span></h1>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>The user
+attaching the pre-built database files must be a member of the SQL&nbsp;Server <span
+class=SpellE><b>sysadmin</b></span> or <span class=SpellE><b>dbcreator</b></span><b>
+</b>fixed server roles.<o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>The user
+running the SQL&nbsp;Server 2000 Sample Database Scripts must be a member of
+the SQL&nbsp;Server <span class=SpellE><b>sysadmin</b></span> or <span
+class=SpellE><b>dbcreator</b></span><b> </b>fixed server roles, or have been
+granted CREATE DATABASE permissions.<o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>The files can
+be used with the following versions of SQL Server 2000: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l10 level1 lfo3;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>SQL Server 2000 Service Pack 3 (SP3) or later.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l10 level1 lfo3;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>SQL Server 2000 Desktop Engine (MSDE 2000) SP3 or later.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l10 level1 lfo3;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>SQL Server 2000 Desktop Engine (MSDE 2000) Release A.<o:p></o:p></span></p>
+
+<h1><a name="_downloading_and_extracting_the_scripts_"></a><span
+style='font-size:16.0pt;font-family:Verdana;color:black'>Downloading and
+Extracting the Files<o:p></o:p></span></h1>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>The SQL Server
+2000 Sample Database Files are available as an installation file,
+SQL2000SampleDb.msi, which can be downloaded by following the instructions on
+the download <a href="http://go.microsoft.com/fwlink/?LinkId=24758"
+target="_blank">website</a>.<o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>After
+downloading SQL2000SampleDb.msi, extract the sample database files by
+double-clicking SQL2000SampleDb.msi. SQL2000SampleDb.msi extracts the database
+scripts and this <span class=SpellE>readme</span> file into this folder by
+default:<o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>C:\SQL&nbsp;Server&nbsp;2000
+Sample Databases<o:p></o:p></span></p>
+
+<h1><a name="_installing_the_sample_databases_238p"></a><span style='font-size:
+16.0pt;font-family:Verdana;color:black'>Installing the Sample Databases<o:p></o:p></span></h1>
+
+<p><b><span style='font-size:8.5pt;font-family:Verdana;color:black'>To install
+the sample databases</span></b><span style='font-size:8.5pt;font-family:Verdana;
+color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l4 level1 lfo4;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Either run a script to build a sample database, or attach the
+pre-built database files for that database.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l4 level1 lfo4;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>To grant another person access to the sample database, you must
+grant permissions on the database objects to that person.<o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>SQL Server
+2000 customers can perform these tasks using either the <span class=SpellE><b>osql</b></span>
+utility or the two graphical utilities SQL Query Analyzer and SQL Enterprise
+Manager. MSDE 2000 includes only the <span class=SpellE><b>osql</b></span>
+command prompt utility.<o:p></o:p></span></p>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p class=MsoNormal><b><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Caution</span></b><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>&nbsp;&nbsp;&nbsp;<span class=SpellE>Instpubs.sql</span> drops any
+existing version of the pubs sample database and <span class=SpellE>Instnwnd.sql</span>
+drops any existing copy of the <span class=SpellE>Northwind</span> sample
+database before creating the new copies of the database.<o:p></o:p></span></p>
+
+</blockquote>
+
+<h5><span style='font-size:10.0pt;font-family:Verdana;color:black'>Attaching
+the Pre-built Files by Using Enterprise Manager<o:p></o:p></span></h5>
+
+<p><b><span style='font-size:8.5pt;font-family:Verdana;color:black'>To attach
+the pre-built files by using SQL Query Analyzer:</span></b><span
+style='font-size:8.5pt;font-family:Verdana;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l2 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>From the <b>Start</b> menu, point to <b>All Programs</b>, point to
+<b>Microsoft SQL&nbsp;Server</b>, and then click the <b>Enterprise Manager</b>
+icon.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l2 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Right-click <b>Databases</b> and select <b>All Tasks/Attach
+Database</b>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l2 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Either enter
+C:\SQL&nbsp;Server&nbsp;2000&nbsp;Sample&nbsp;Databases\<span class=SpellE>northwind.mdf</span>
+or <br>
+C:\SQL&nbsp;Server&nbsp;2000&nbsp;Sample&nbsp;Databases\<span class=SpellE>pubs.mdf</span>
+as the <b>MDF file of database to attach</b>, or click <b>Browse</b> (<b>…</b>)
+to search for the file to attach.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l2 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Click <b>Verify</b> to ensure the selected MDF file is correct.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l2 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Specify <span class=SpellE><b>Northwind</b></span> or <b>pubs</b>
+in <b>Attach as</b>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l2 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Specify the database owner.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l2 level1 lfo5;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Click <b>OK</b>.<o:p></o:p></span></p>
+
+<h5><span style='font-size:10.0pt;font-family:Verdana;color:black'>Attaching
+the Pre-built Files by <span class=GramE>Using</span> <span class=SpellE>osql</span><o:p></o:p></span></h5>
+
+<p><b><span style='font-size:8.5pt;font-family:Verdana;color:black'>To attach
+the pre-built files by using <span class=SpellE>osql</span>:</span></b><span
+style='font-size:8.5pt;font-family:Verdana;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l0 level1 lfo6;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Open a command prompt window.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l0 level1 lfo6;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>From the command prompt, use the <span class=SpellE>cd</span>
+command to navigate to the folder containing the SQL&nbsp;Server 2000 Sample
+Database Scripts: <o:p></o:p></span></p>
+
+<pre style='margin-left:.35in'><span class=SpellE><span class=GramE><span
+style='color:black'>cd</span></span></span><span style='color:black'> c:\SQL&nbsp;Server&nbsp;2000&nbsp;Sample&nbsp;Databases<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l0 level1 lfo6;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Run <span class=SpellE>osql</span> using the -Q switch to execute <span
+class=SpellE>sp_attach_db</span> to attach either the pubs or <span
+class=SpellE>Northwind</span> pre-built database files. Here are some examples:<o:p></o:p></span></p>
+
+<blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'>
+
+<p class=MsoNormal><b><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Note</span></b><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>&nbsp;&nbsp;&nbsp;Enter the <span class=SpellE>osql</span>
+commands on one line in the command prompt window. These examples split the
+commands across two or three lines to make the examples easier to read.<o:p></o:p></span></p>
+
+</blockquote>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l9 level1 lfo7;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>To attach the <span class=SpellE><b>Northwind</b></span> database
+to a default instance on the same computer: <o:p></o:p></span></p>
+
+<pre style='margin-left:.25in;text-indent:-.25in;mso-list:l9 level1 lfo7'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='color:black'>osql</span></span><span
+style='color:black'> -E -Q &quot;EXEC <span class=SpellE>sp_attach_db</span> <span
+class=SpellE>N'Northwind</span>',<o:p></o:p></span></pre><pre style='margin-left:
+.25in'><span style='color:black'> <span class=SpellE>N'c</span>:\SQL Server 2000 Sample Databases\<span
+class=SpellE>northwind.mdf</span>'&quot;<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l9 level1 lfo7;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>To attach the <b>pubs</b> database to a default instance on a
+different computer: <o:p></o:p></span></p>
+
+<pre style='margin-left:.25in;text-indent:-.25in;mso-list:l9 level1 lfo7'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='color:black'>osql</span></span><span
+style='color:black'> -E -<st1:place w:st="on">S <span class=SpellE><i>ComputerName</i></span></st1:place> -Q &quot;EXEC <span
+class=SpellE>sp_attach_db</span> <span class=SpellE>N'pubs</span>',<o:p></o:p></span></pre><pre
+style='margin-left:.25in'><span style='color:black'> <span class=SpellE>N'c</span>:\SQL Server 2000 Sample Databases\<span
+class=SpellE>pubs.mdf</span>'&quot;<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.25in;text-indent:-.25in;mso-list:l9 level1 lfo7;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>To attach the <span class=SpellE><b>Northwind</b></span> database
+to a named instance: <o:p></o:p></span></p>
+
+<pre style='margin-left:.25in;text-indent:-.25in;mso-list:l9 level1 lfo7'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+class=SpellE><span style='color:black'>osql</span></span><span
+style='color:black'> -E -S <span class=SpellE><i>ComputerName</i>/<i>InstanceName</i></span><o:p></o:p></span></pre><pre
+style='margin-left:.25in;text-indent:-.25in;mso-list:l9 level1 lfo7'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol;color:black'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='color:black'><span style='mso-spacerun:yes'> </span>-Q &quot;EXEC <span
+class=SpellE>sp_attach_db</span> <span class=SpellE>N'Northwind</span>',<o:p></o:p></span></pre><pre
+style='margin-left:.25in'><span style='color:black'> <span class=SpellE>N'c</span>:\SQL Server 2000 Sample Databases\<span
+class=SpellE>northwind.mdf</span>'&quot;<o:p></o:p></span></pre>
+
+<h5><span style='font-size:10.0pt;font-family:Verdana;color:black'>Running the
+Scripts Using SQL Query Analyzer<o:p></o:p></span></h5>
+
+<p><b><span style='font-size:8.5pt;font-family:Verdana;color:black'>To run the
+scripts using SQL Query Analyzer:</span></b><span style='font-size:8.5pt;
+font-family:Verdana;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l7 level1 lfo8;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>From the Start menu, point to <b>All Programs</b>, point to <b>Microsoft
+SQL Server</b>, and then click the <b>Query Analyzer</b> icon.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l7 level1 lfo8;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Connect to the instance of SQL Server 2000 on which you want to
+create the sample database.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l7 level1 lfo8;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>On the <b>File</b> menu, click <b>Open</b>, and navigate to the
+c:\SQL Server 2000 Sample Databases folder. Select either <span class=SpellE>Instpubs.sql</span>
+or <span class=SpellE>Instnwnd.sql</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l7 level1 lfo8;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>On the toolbar, click <b>Execute Query</b>.<o:p></o:p></span></p>
+
+<h5><span style='font-size:10.0pt;font-family:Verdana;color:black'>Running the
+Scripts <span class=GramE>Using</span> <span class=SpellE>osql</span><o:p></o:p></span></h5>
+
+<p><b><span style='font-size:8.5pt;font-family:Verdana;color:black'>To run the
+scripts using <span class=SpellE>osql</span>:</span></b><span style='font-size:
+8.5pt;font-family:Verdana;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l6 level1 lfo9;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Open a command prompt window.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l6 level1 lfo9;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>From the command prompt, use the <span class=SpellE>cd</span>
+command to navigate to the folder containing the SQL Server 2000 Sample
+Database Scripts:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l6 level1 lfo9;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=SpellE><span style='font-size:8.5pt;
+font-family:Verdana;color:black'>cd</span></span><span style='font-size:8.5pt;
+font-family:Verdana;color:black'> c:\SQL Server 2000 Sample Databases<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l6 level1 lfo9;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Run <span class=SpellE>osql</span> specifying either <span
+class=SpellE>Instpubs.sql</span> or <span class=SpellE>Instnwnd.sql</span> as
+the input file. Here are some examples: <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.6in;text-indent:-.25in;mso-list:l6 level2 lfo9;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>To install the <span class=SpellE><b>Northwind</b></span> database
+on a default instance on the same computer: <o:p></o:p></span></p>
+
+<pre style='margin-left:.6in'><span class=SpellE><span class=GramE><span
+style='color:black'>osql</span></span></span><span style='color:black'> -E -<span
+class=SpellE>i</span> <span class=SpellE>instnwnd.sql</span><o:p></o:p></span></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.6in;text-indent:-.25in;mso-list:l6 level2 lfo9;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>To install the <b>pubs</b> database on a default instance on a
+different computer: <o:p></o:p></span></p>
+
+<pre style='margin-left:.6in'><span class=SpellE><span class=GramE><span
+style='color:black'>osql</span></span></span><span style='color:black'> -E -<st1:place
+w:st="on">S <span class=SpellE><i>ComputerName</i></span></st1:place> -<span
+class=SpellE>i</span> <span class=SpellE>instpubs.sql</span><o:p></o:p></span></pre>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.6in;text-indent:-.25in;mso-list:l6 level2 lfo9;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:8.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>To install the <span class=SpellE><b>Northwind</b></span> database
+on a named instance: <o:p></o:p></span></p>
+
+<pre style='margin-left:.6in'><span class=SpellE><span class=GramE><span
+style='color:black'>osql</span></span></span><span style='color:black'> -E -S <span
+class=SpellE><i>ComputerName</i>/<i>InstanceName</i></span> -<span
+class=SpellE>i</span> <span class=SpellE>instnwnd.sql</span><o:p></o:p></span></pre>
+
+<h5><span style='font-size:10.0pt;font-family:Verdana;color:black'>Assigning
+Permissions<o:p></o:p></span></h5>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>The logon you
+use when creating or attaching a database becomes the owner of the sample
+database, and of all the objects within the database. That login and any login
+in the <span class=SpellE><b>sysadmin</b></span> fixed server role will have
+permission to access the data and objects in the sample database. All other
+logins must be granted permissions before they can access the sample data and
+objects.<o:p></o:p></span></p>
+
+<h6><span style='font-size:9.5pt;font-family:Verdana;color:black'>Granting a
+Login Access to a Database<o:p></o:p></span></h6>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>You can grant
+access to the sample databases using Enterprise Manager or the <span
+class=SpellE><b>sp_grantdbaccess</b></span> system stored procedure. Only a
+database user that is a member of at least one of the following roles can grant
+access to a database: the <span class=SpellE><b>sysadmin</b></span> fixed
+server role, the <span class=SpellE><b>db_accessadmin</b></span> fixed database
+role, or the <span class=SpellE><b>db_owner</b></span> fixed database role.<o:p></o:p></span></p>
+
+<p><b><span style='font-size:8.5pt;font-family:Verdana;color:black'>To grant
+access using Enterprise Manager:</span></b><span style='font-size:8.5pt;
+font-family:Verdana;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l8 level1 lfo10;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Expand the server group and then expand the server.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l8 level1 lfo10;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Expand <b>Databases</b> and select the sample database.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l8 level1 lfo10;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Right-click <span class=GramE><b>Users</b>,</span> and then click <b>New
+Database User</b>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l8 level1 lfo10;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Complete the <b>Database User Properties</b> form.<o:p></o:p></span></p>
+
+<p><b><span style='font-size:8.5pt;font-family:Verdana;color:black'>To grant
+access using <span class=SpellE>sp_grantdbaccess</span></span></b><span
+style='font-size:8.5pt;font-family:Verdana;color:black'><o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>Having
+connected to the server with either <span class=SpellE><b>osql</b></span> or
+SQL Query Analyzer, you can use <span class=SpellE><b>sp_grantdbaccess</b></span>
+to enable a domain user to access the database. For example, the following
+commands grant access to <b>pubs</b> to a domain user named <span class=SpellE>Hamid</span>:<o:p></o:p></span></p>
+
+<pre><span style='color:black'>USE pubs;<o:p></o:p></span></pre><pre><span
+style='color:black'>GO<o:p></o:p></span></pre><pre><span class=SpellE><span
+style='color:black'>sp_grantdbaccess</span></span><span style='color:black'> 'CORPORATE\<span
+class=SpellE>hamid</span>', '<span class=SpellE>hamid</span>';<o:p></o:p></span></pre><pre><span
+style='color:black'>GO<o:p></o:p></span></pre>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>For more
+information about granting logins access to a database, see the following
+topics in SQL Server Books Online:<o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'><a
+href="http://go.microsoft.com/fwlink/?LinkId=24755" target="_blank">Granting a
+Windows User or Group Access to a Database</a><o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'><a
+href="http://go.microsoft.com/fwlink/?LinkId=24756" target="_blank">Granting a
+SQL Server Login Access to a Database</a><o:p></o:p></span></p>
+
+<h6><span style='font-size:9.5pt;font-family:Verdana;color:black'>Granting User
+Accounts Permissions<o:p></o:p></span></h6>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>Once a login
+has been associated with a user account in the sample database, you must grant
+that user account permissions to access database objects. Only a database user
+that is a member of at least one of the following roles can grant access to
+database objects: the <span class=SpellE><b>sysadmin</b></span> fixed server
+role, the <span class=SpellE><b>db_accessadmin</b></span> fixed database role,
+or the <span class=SpellE><b>db_owner</b></span> fixed database role.<o:p></o:p></span></p>
+
+<p><b><span style='font-size:8.5pt;font-family:Verdana;color:black'>To grant
+account permissions using Enterprise Manager</span></b><span style='font-size:
+8.5pt;font-family:Verdana;color:black'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l3 level1 lfo11;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Expand the server group and then expand the server.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l3 level1 lfo11;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Expand <b>Databases</b> and select the sample database.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l3 level1 lfo11;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Expand the category for type of object, such as stored procedures
+or views.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:8.4pt;
+margin-left:.35in;text-indent:-.25in;mso-list:l3 level1 lfo11;tab-stops:list .5in'><![if !supportLists]><span
+style='font-size:8.5pt;font-family:Verdana;mso-fareast-font-family:Verdana;
+mso-bidi-font-family:Verdana;color:black'><span style='mso-list:Ignore'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:8.5pt;font-family:Verdana;
+color:black'>Right-click the object, point to <b>All Tasks</b>, and then <span
+class=GramE>click</span> <b>Manage Permissions</b>.<o:p></o:p></span></p>
+
+<p><b><span style='font-size:8.5pt;font-family:Verdana;color:black'>To grant
+account permissions using the GRANT statement</span></b><span style='font-size:
+8.5pt;font-family:Verdana;color:black'><o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>In either <span
+class=SpellE><b>osql</b></span> or SQL Query Analyzer you can use the <b>GRANT</b>
+statement to grant permissions on database objects. First execute a USE &lt;<span
+class=SpellE><i>database_name</i></span>&gt; statement.<o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>To grant
+execute permission on a stored procedure, use the following statement:<o:p></o:p></span></p>
+
+<pre><span style='color:black'>GRANT EXECUTE ON [<span class=SpellE>dbo</span>]<span
+class=GramE>.[</span><span class=SpellE><i>database_object_name</i></span>]<o:p></o:p></span></pre><pre><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TO [<span
+class=SpellE><i>database_user_account</i></span>];<o:p></o:p></span></pre><pre><span
+style='color:black'>GO<o:p></o:p></span></pre>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>To grant data
+read and modification <span class=GramE>permissions,</span> use the following
+statement:<o:p></o:p></span></p>
+
+<pre><span class=GramE><span style='color:black'>GRANT<span style='mso-spacerun:yes'>  </span>SELECT</span></span><span
+style='color:black'> , INSERT , DELETE , UPDATE<o:p></o:p></span></pre><pre><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON [<span
+class=SpellE>dbo</span>]<span class=GramE>.[</span><span class=SpellE><i>database_object_name</i></span>]<o:p></o:p></span></pre><pre><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TO [<span
+class=SpellE><i>database_user_account</i></span>];<o:p></o:p></span></pre><pre><span
+style='color:black'>GO<o:p></o:p></span></pre>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'>For more
+information about granting permissions in a database, see the following topic
+in SQL Server Books Online:<o:p></o:p></span></p>
+
+<p><span style='font-size:8.5pt;font-family:Verdana;color:black'><a
+href="http://go.microsoft.com/fwlink/?LinkId=24757" target="_blank">Granting
+Permissions</a><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

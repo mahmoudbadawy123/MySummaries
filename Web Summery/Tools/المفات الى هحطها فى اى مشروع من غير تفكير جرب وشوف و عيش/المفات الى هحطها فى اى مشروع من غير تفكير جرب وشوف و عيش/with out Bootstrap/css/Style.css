@@ -1,0 +1,94 @@
+/* Main Css Rules  for Main Elements in The project */
+body
+{
+    background-color: #DDD;
+    direction: rtl;
+}
+
+.container
+{
+    height: 1000px;
+    width: 940px;
+    margin: 20px auto;
+    background-color: #FFF;
+}
+
+/*  End of Main Css Rules  */
+
+/*  Start Header */
+header
+{
+    height: 100px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+header .logo
+{
+    width:20%;
+    height: 100px;
+    background-color: #9a3232;
+    float: right;
+
+}
+
+header nav
+{
+    width:80%;
+    height: 100px;
+    background-color: yellow;
+    float: right;
+}
+/*  end Header */
+
+
+
+/*  Start  content */
+.content
+{
+    height: 500px;
+    background-color: #BBB;
+    overflow: hidden;
+}
+
+.content .SideBar
+{
+    height: 500px;
+    background-color: white;
+    width: 20%;
+    margin-left: 1%;
+    float: right;
+}
+
+.content .products
+{
+    height: 500px;
+    background-color: darkseagreen;
+    width: 79%;
+    float: left;
+}
+
+/*  end content */
+
+
+
+/*  Start  footer */
+footer
+{
+    height: 100px;
+    background-color: #FF0;
+}
+
+
+footer .info
+{
+    min-height: 100px;
+    background-color: chocolate;
+}
+
+footer .copyright
+{
+    height: 20px;
+    background-color: darkslateblue;
+}
+/*  end footer */

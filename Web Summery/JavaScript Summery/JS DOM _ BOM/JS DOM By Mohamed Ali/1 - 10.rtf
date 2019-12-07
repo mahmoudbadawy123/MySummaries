@@ -1,0 +1,192 @@
+{\rtf1\fbidis\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fnil\fcharset178{\*\fname Arial;}Arial (Arabic);}{\f2\fnil Arial;}}
+{\colortbl ;\red255\green0\blue0;\red247\green150\blue70;\red0\green0\blue255;\red0\green77\blue187;}
+{\*\generator Riched20 10.0.10240}\viewkind4\uc1 
+\pard\ltrpar\sa200\sl276\slmult1\qc\cf1\b\fs22\lang1033 #02 - Find Elements By [ ID, Class, Tag ]\cf0\b0\par
+
+\pard\ltrpar\sa200\sl276\slmult1\par
+  \cf1\b [1] \cf0\b0 document.\cf1 getElementsByTagName\cf0 (' ');\par
+\cf1\b   [2] \cf0\b0 document.getElement\cf1 sByClassName\cf0 (' '); \cf1\b  | Not Compatiple With IE 8\cf0\b0\par
+  \cf1\b [3] \cf0\b0 document.\cf1 querySelectorAll\cf0  \f1\rtlch\lang1025 ()\f0\ltrch\lang1033 ;           \f2\lang1025          \cf1\b\f0\lang1033 | Not Compatiple With IE 8\cf0\b0\f1\rtlch\lang1025\par
+
+\pard\ltrpar\sl240\slmult1\f0\ltrch\lang1033 var myElements = document.\cf1 querySelectorAll\cf0 ('div.main');\f1\rtlch\lang1025\par
+\par
+\f0\ltrch\lang1033 console.log(\cf1\b myElements.length\cf0\b0 );\f1\rtlch\lang1025\par
+\par
+\f0\ltrch\lang1033 myElements[0].\cf1 innerHTML \cf0 = '\cf2 Changed By JS\cf0 ';\f1\rtlch\lang1025\par
+\par
+\cf1\b\fs36 ------------------------------------------------------------------------\cf0\b0\fs22\par
+\par
+
+\pard\ltrpar\sl240\slmult1\qc\cf1\b\f0\ltrch\lang1033 #03 - Find Elements By Objects Part 1\cf0\b0\f1\rtlch\lang1025\par
+
+\pard\ltrpar\sl240\slmult1\par
+\par
+\f2\ltrch   \f0\lang1033 document.\cf1 title\cf0\f1\rtlch\lang1025\par
+\f2\ltrch   \f0\lang1033 document.\cf1 images\cf0\f1\rtlch\lang1025\par
+\f2\ltrch   \f0\lang1033 document.\cf1 forms\cf0\f1\rtlch\lang1025\par
+\par
+\par
+\f0\ltrch\lang1033 myDiv.innerHTML  = document.\cf1 tite\cf0 ;                       [Give Me A \cf1 Title\cf0 ]\f1\rtlch\lang1025\par
+\f0\ltrch\lang1033 myDiv.innerHTML  = document.\cf1 images[0].src\cf0 ;       [Give Me A \cf1 Source\cf0 ]\f1\rtlch\lang1025\par
+\f0\ltrch\lang1033 myDiv.innerHTML  = document.\cf1 images.length;      \cf0 [Counter \cf1 images\cf0 ]\f1\rtlch\lang1025\par
+\f0\ltrch\lang1033 myDiv.innerText    = document.\cf1 forms[0].s1.type\cf0 ; OR \cf1 .value\cf0\f1\rtlch\lang1025\par
+\par
+\cf1\b\fs36 ------------------------------------------------------------------------\cf0\b0\fs22\par
+\par
+
+\pard\ltrpar\sl240\slmult1\qc\cf1\b\f0\ltrch\lang1033 #04 - Find Elements By Objects Part 2\cf0\b0\f1\rtlch\lang1025\par
+\par
+\par
+
+\pard\ltrpar\sl240\slmult1\f2\ltrch   \f0\lang1033 document.\cf1 body\cf0\f1\rtlch\lang1025\par
+\f2\ltrch   \f0\lang1033 document.\cf1 anchors\cf0\f1\rtlch\lang1025\par
+\f2\ltrch   \f0\lang1033 document.\cf1 links\cf0\f1\rtlch\lang1025\par
+\par
+
+\pard\ltrpar\sl240\slmult1\qc\par
+
+\pard\ltrpar\sl240\slmult1\f0\ltrch\lang1033 myDiv.innerText  = document.\cf1 body\cf0 .\cf1 innerHTML;   \cf0 [Give Me A \cf1 Tag Insid Body \cf0 ]\f1\rtlch\lang1025\par
+\par
+\f0\ltrch\lang1033 myDiv.innerText  = document.\cf1 body.innerText;      \cf0 [Give Me A \cf1 Text In Tag \cf0 Insid Body]\f1\rtlch\lang1025\par
+\par
+\f0\ltrch\lang1033 var \cf1 innerText \cf0 = document.\cf1 body.innerText;\cf0\f1\rtlch\lang1025\par
+\par
+\par
+\cf1\f0\ltrch\lang1033 if\cf0  (innerText.\cf1 indexOf\cf0 (' **DOM** ') > -1 ) \{\f1\rtlch\lang1025\par
+\f2\ltrch     \f1\rtlch\par
+\f2\ltrch     \f0\lang1033 console.log('\cf2 Yes The String Is Exist\cf0 ');\f1\rtlch\lang1025\par
+\}\par
+\par
+\f0\ltrch\lang1033 myDiv.innerText  = document.\cf1 anchors\cf0 .\cf1 length     \cf0 [Give Me A \cf1 Anchors Without Href\cf0 ]\f1\rtlch\lang1025\par
+\f0\ltrch\lang1033 myDiv.innerText  = document.\cf1 links\cf0 .\cf1 length\cf0 ;         [Give Me A \cf1 Anchors With Href\cf0 ]\f1\rtlch\lang1025\par
+\par
+\par
+\cf1\b\fs36 ------------------------------------------------------------------------\cf0\b0\fs22\par
+\par
+
+\pard\ltrpar\sl240\slmult1\qc\cf1\b\f0\ltrch\lang1033 #05 - Elements - Get, Set Element Content\cf0\b0\f1\rtlch\lang1025\par
+
+\pard\ltrpar\sl240\slmult1\par
+\par
+\f2\ltrch     \f0\lang1033 innerText   \cf1 Not Standerd\cf0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 outerText   \cf1 Not Standerd\cf0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 inerHTML\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 outrText\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 TextContent\f1\rtlch\lang1025\par
+\f2\ltrch     \f1\rtlch\par
+\f2\ltrch     \f1\rtlch\par
+\cf1\b\f2\ltrch     \f0\lang1033 Get HTML Element\f1\rtlch\lang1025\par
+\cf0\b0\f2\ltrch         \f0\lang1033 element.\cf1 innerHTML\cf0\f1\rtlch\lang1025\par
+\par
+\cf1\b\f2\ltrch     \f0\lang1033 Set HTML Element\f1\rtlch\lang1025\par
+\cf0\b0\f2\ltrch         \f0\lang1033 element.innerHTML = 'This Is New \cf1 <span>\cf0  Text\cf1 </span>\cf0 ';\f1\rtlch\lang1025\par
+\par
+\f2\ltrch     \cf1\b\f0\lang1033 Get Text Element\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch         \f0\lang1033 element.\cf1 textContent\b\f1\rtlch\lang1025\par
+\par
+\f2\ltrch     \f0\lang1033 Set Text Element\f1\rtlch\lang1025\par
+\cf0\b0\f2\ltrch         \f0\lang1033 element.textContent = 'This Is New Text';\f1\rtlch\lang1025\par
+\par
+\cf1\b\fs36 ------------------------------------------------------------------------\cf0\b0\fs22\par
+
+\pard\ltrpar\sl240\slmult1\qc\cf1\b\f0\ltrch\lang1033 06 - Elements - Get, Set Attribute Value\cf0\b0\f1\rtlch\lang1025\par
+
+\pard\ltrpar\sl240\slmult1\par
+\cf1\b\f0\ltrch\lang1033 Get ID\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myelement.\cf1 id\cf0\f1\rtlch\lang1025\par
+\par
+\cf1\b\f0\ltrch\lang1033 Set ID\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myelement.i\cf1 d\cf0  = "Name Id";\f1\rtlch\lang1025\par
+\par
+\cf1\b\f0\ltrch\lang1033 Get Class\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myelement.\cf1 className\cf0 ;\f1\rtlch\lang1025\par
+\par
+\cf1\b\f0\ltrch\lang1033 Set Class\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myelement.\cf1 className\cf0  = "Name Id";\f1\rtlch\lang1025\par
+\f2\ltrch     \f1\rtlch\par
+\cf1\b\f0\ltrch\lang1033 Get Src Attribute\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myelement.\cf1 src\cf0 ;\f1\rtlch\lang1025\par
+\par
+\cf1\b\f0\ltrch\lang1033 Set Src Attribute\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myelement.\cf1 src\f2\lang1025  \cf0\f0\lang1033 = "{{\field{\*\fldinst{HYPERLINK http://www.placehold.it/100/100 }}{\fldrslt{http://www.placehold.it/100/100\ul0\cf0}}}}\f1\rtlch\fs22\lang1025 ";\par
+\f2\ltrch     \f1\rtlch\par
+\cf1\b\f0\ltrch\lang1033 Get Alt Attribute\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myelement.\cf1 alt\cf0 ;\f1\rtlch\lang1025\par
+\par
+\cf1\b\f0\ltrch\lang1033 Set Alt Attribute\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myelement.\cf1 alt \cf0 = "images";\f2\lang1025     \f1\rtlch\par
+\par
+\cf1\b\f0\ltrch\lang1033 Get Title Attribute\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myelement.\cf1 title\cf0 ;\f2\lang1025    \f1\rtlch\par
+\par
+\cf1\b\f0\ltrch\lang1033 Set Title Attribute\cf0\b0\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myelement.\cf1 title \cf0 = "Title";\f2\lang1025   \f1\rtlch\par
+\par
+\cf1\b\fs36 ------------------------------------------------------------------------\f2\ltrch  \cf0\b0\f1\rtlch\fs22\par
+\par
+
+\pard\ltrpar\sl240\slmult1\qc\cf1\b\f0\ltrch\lang1033 #07 - Elements - GetAttribute, SetAttribute\cf0\b0\f1\rtlch\lang1025\par
+
+\pard\ltrpar\sl240\slmult1\par
+\cf1\f0\ltrch\lang1033 getAttribute\cf0 ('\cf4 AttributeName\cf0 ');\f1\rtlch\lang1025\par
+\cf1\f0\ltrch\lang1033 setAttribute\cf0 ('\cf4 AttributeName\cf0 ', '\cf4 AttributeName Value\cf0 ');\f1\rtlch\lang1025\par
+\par
+\cf1\b\fs36 ------------------------------------------------------------------------\f2\ltrch  \cf0\b0\f1\rtlch\fs22\par
+\par
+
+\pard\ltrpar\sl240\slmult1\qc\cf1\b\f0\ltrch\lang1033 #08 - Elements - HasAttribute, RemoveAttribute\cf0\b0\f1\rtlch\lang1025\par
+
+\pard\ltrpar\sl240\slmult1\par
+\f0\ltrch\lang1033 var myImg = document.querySelector('img');\f1\rtlch\lang1025\par
+\par
+\par
+\cf1\f0\ltrch\lang1033 if \cf0 (myImg.alt === ' ' ) \{\f2\lang1025  \f1\rtlch\par
+\par
+\f2\ltrch     \f0\lang1033 myImg.\cf1 setAttribute\cf0 ('\cf1 alt\cf0 ', 'Default');\f1\rtlch\lang1025\par
+\par
+\f2\ltrch     \f0\lang1033 myImg\cf1 .removeAttribute\cf0 ('\cf1 alt\cf0 ', 'Default');\f1\rtlch\lang1025\par
+\par
+\f2\ltrch     \f0\lang1033 myImg.\cf1 alt \cf0 = 'Default';\f1\rtlch\lang1025\par
+\}\par
+\par
+\par
+\cf1\f0\ltrch\lang1033 if\cf0  ( myImg.\cf1 hasAttribute\cf0 ('\cf1 alt\cf0 ') ) \{\f1\rtlch\lang1025\par
+\f2\ltrch     \f1\rtlch\par
+\f2\ltrch  \f0\lang1033 console.log(' \cf1 Yes Has Attribute \cf0 ');\f1\rtlch\lang1025\par
+\par
+\f0\ltrch\lang1033\}else \{\f1\rtlch\lang1025\par
+\f2\ltrch   \f0\lang1033 console.log( '\cf1 No Ha\\'s Attribute\cf0 ' );\f2\lang1025  \f1\rtlch\par
+\}\par
+\par
+\cf1\b\fs36 ------------------------------------------------------------------------\f2\ltrch  \cf0\b0\f1\rtlch\fs22\par
+
+\pard\ltrpar\sl240\slmult1\qc\cf1\b\f0\ltrch\lang1033 #09 - Elements - ClassList [ Item, Contains, Length ]\f1\rtlch\lang1025\par
+
+\pard\ltrpar\sl240\slmult1\cf0\b0\par
+\f0\ltrch\lang1033 var myDiv = document.getElementById('\cf1 main\cf0 ');\f1\rtlch\lang1025\par
+\par
+\f0\ltrch\lang1033 console.log(myDiv.\cf1 classList.length\cf0 );\f1\rtlch\lang1025\par
+\f0\ltrch\lang1033 console.log(myDiv.\cf1 classList.item(0)\cf0 );\f1\rtlch\lang1025\par
+\par
+\f0\ltrch\lang1033 if (myDiv.classList.\cf1 contains\cf0 ('main')) \{\f1\rtlch\lang1025\par
+\f2\ltrch     \f1\rtlch\par
+\f2\ltrch    \f0\lang1033 console.log('\cf1 Yes Contain Called Main\cf0 ');\f1\rtlch\lang1025\par
+\}\par
+\par
+\cf1\b\fs36 ------------------------------------------------------------------------\f2\ltrch  \f1\rtlch\par
+\fs22\par
+
+\pard\ltrpar\sl240\slmult1\qc\f0\ltrch\lang1033 #10 - Elements - ClassList [ Add, Remove, Toggle ]\cf0\b0\f1\rtlch\lang1025\par
+
+\pard\ltrpar\sl240\slmult1\par
+\f0\ltrch\lang1033 var myDiv = document.\cf1 getElementById\cf0 ('outertext'),\f1\rtlch\lang1025\par
+\f2\ltrch      \f0\lang1033 myButton = document.\cf1 querySelecto\cf0 r('button');\f1\rtlch\lang1025\par
+\par
+\f0\ltrch\lang1033 myButton.\cf1 onclick \cf0 = function () \{\f1\rtlch\lang1025\par
+\f2\ltrch     \f1\rtlch\par
+\f2\ltrch     \f0\lang1033 'use strict';\f1\rtlch\lang1025\par
+\f2\ltrch     \f0\lang1033 myDiv.\cf1 classList.toggle\cf0 ('hidden');\f1\rtlch\lang1025\par
+\}\par
+\b\par
+}
+ 
